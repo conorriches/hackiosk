@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+body{
+    font-family: 'Nunito', sans-serif;
+}
+
+
+.nav-item{
+    background:white;
+    margin: 0 5px 0 5px;
+    border-radius:5px;
+}
+
+.navbar h1{
+    color:white;
+    margin-right:15px;
+}
+
+.jumbotron.title{
+    padding:10px;
+}
+
+.jumbotron.title h1,h2,h3{
+    margin:0
+}
+
+.info{
+    border-left:3px solid green;
+    padding:8px;
+    margin-bottom:20px;
+}
+
+.info:before{
+    width: 0; 
+    height: 0; 
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-left: 60px solid green;
+
+}
+
+.card{
+    background:#feffd0; 
+}
+
+.tile{
+    padding: 0 15px 15px 0;
+}
