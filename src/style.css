@@ -45,3 +45,7 @@ body{
 .tile{
     padding: 0 15px 15px 0;
 }
+
+.statement li{
+    list-style: none;
+}

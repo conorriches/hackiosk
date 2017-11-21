@@ -6,9 +6,9 @@ class Tile extends React.Component {
     return (
     <div className="col-md-3 tile">
       <Link to={this.props.link}>
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">{this.props.title}</h4>
+      <div className="card">
+        <div className="card-body">
+          <h4 className="card-title">{this.props.title}</h4>
           {this.props.children}
         </div>
       </div>

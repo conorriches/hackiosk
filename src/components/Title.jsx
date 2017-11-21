@@ -4,7 +4,7 @@ import { menuItems } from "../config";
 class Title extends React.Component {
   render() {
     return (
-      <div class="jumbotron title">
+      <div className="jumbotron title">
         <h3>
           {menuItems.map(
             item =>

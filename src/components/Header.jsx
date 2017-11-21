@@ -5,18 +5,18 @@ import {Link} from 'react-router-dom'
 
 const Header = () => {
   return (
-    <nav class="navbar navbar-expand-md bg-dark">
+    <nav className="navbar navbar-expand-md bg-dark">
       <h1>{siteTitle}</h1>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
+      <div className="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul className="navbar-nav mr-auto">
           
-          {menuItems.map(item => {
+          {menuItems.map((item, i) => {
             return (
-              <li className="nav-item active">
+              <li className="nav-item active" key={i}>
                 <Link className="nav-link" to={item.url}>
                   {item.name} 
                 </Link>
