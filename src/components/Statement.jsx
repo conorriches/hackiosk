@@ -9,19 +9,29 @@ class Statement extends React.Component {
       <div className="statement">
         <div className="info">Your Basket:</div>
         {this.props.items.map((item, i) => (
-          <StatementItem name={item.name} price={item.price} key={i} />
+          <StatementItem name={item.name} price={item.price} barcode={item.barcode} key={i} />
         ))}
         <hr />
         <StatementItem name="Total" price={sum(this.props.items)} />
+        
+          <button type="button" className="btn btn-danger">
+            Clear
+          </button>
+          <button type="button" className="btn btn-success pull-right">
+            Buy
+          </button>
+      
       </div>
     );
   }
 }
 
 const sum = items => {
+  let total = 0;
   items.map(i => {
-    //console.log(i);
+    total += i.price;
   });
+  return total;
 };
 
 // Maps state from store to props

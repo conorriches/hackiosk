@@ -38,8 +38,20 @@ body{
 
 }
 
+.category .active .card{
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.3);
+    background: #c3e6ea;
+}
+.category .card{
+    background:#CBEFF4; 
+    text-decoration: none;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.3);
+}
 .card{
     background:#feffd0; 
+    height: 120px;
+    cursor: pointer;
+    color:darkblue;
 }
 
 .tile{
@@ -48,4 +60,11 @@ body{
 
 .statement li{
     list-style: none;
+}
+
+.item-price{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 4px 0px;
 }

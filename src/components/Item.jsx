@@ -10,8 +10,7 @@ class Item extends React.Component {
   }
 
   handleClick(e) {
-    console.log(this.props);
-    this.props.addItem(this.props.title, this.props.price);
+    this.props.addItem(this.props.barcode);
   }
 
   render() {
@@ -20,7 +19,7 @@ class Item extends React.Component {
         <div className="card">
           <div className="card-body">
             <h4 className="card-title">{this.props.title}</h4>
-            <span className="badge badge-success">
+            <span className="badge badge-success item-price">
               <NumericLabel
                 params={{
                   currency: true,
@@ -50,7 +49,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     // You can now say this.props.createBook
-    addItem: (name, price) => dispatch(addItem(name, price))
+    addItem: (barcode) => dispatch(addItem(barcode))
   };
 };
 

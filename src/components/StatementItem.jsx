@@ -19,6 +19,11 @@ class StatementItem extends React.Component {
             </NumericLabel>
           </div>
         </div>
+        <div className="row">
+          <div className="col-md-12">
+            <small>{this.props.barcode}</small>
+          </div>
+        </div>
       </li>
     );
   }
