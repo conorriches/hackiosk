@@ -3,9 +3,10 @@ export const addItem = (barcode) => ({
     barcode
 });
 
-export const clearItems = (name, price, barcode) => ({
-    type: 'STATEMENT_CLEAR',
-    name,
-    price,
-    barcode
+export const startCheckout = () => ({
+    type: 'SNACKSPACE_START_CHECKOUT',
+});
+
+export const clearBasket = () => ({
+    type: 'SNACKSPACE_STATEMENT_CLEAR'
 });

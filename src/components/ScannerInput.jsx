@@ -17,11 +17,11 @@ class ScannerInput extends React.Component {
       event.preventDefault();
       this.props.addItem(event.target.value);
       event.target.value = "";
+      this.props.history.push("/snackspace");
     }
   };
 
   onBlur = e =>{
-    console.log("blur");
     this.focus();  
   }
 
@@ -31,7 +31,7 @@ class ScannerInput extends React.Component {
 
   render() {
     return (
-      <div className="info" onClick={this.handleClick}>
+      <div className="scanner" onClick={this.handleClick}>
         Scanner Input: <input
           type="text"
           id="scannerInput"

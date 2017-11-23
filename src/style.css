@@ -3,7 +3,6 @@ body{
     font-family: 'Nunito', sans-serif;
 }
 
-
 .nav-item{
     background:white;
     margin: 0 5px 0 5px;
@@ -15,6 +14,10 @@ body{
     margin-right:15px;
 }
 
+.jumbotron{
+    margin-bottom:20px;
+}
+
 .jumbotron.title{
     padding:10px;
 }
@@ -24,38 +27,65 @@ body{
 }
 
 .info{
-    border-left:3px solid green;
+    border-bottom: 3px solid #7da752;
+    background: #dbf3c2;
     padding:8px;
-    margin-bottom:20px;
+    margin:20px 0;
 }
 
-.info:before{
-    width: 0; 
-    height: 0; 
-    border-top: 60px solid transparent;
-    border-bottom: 60px solid transparent;
-    border-left: 60px solid green;
+.info.error{
+    border-bottom:3px solid red; 
+    background: lightgray;  
+    padding:8px;
+    margin:20px 0;
+    background: repeating-linear-gradient(
+        45deg,
+        #ffffff,
+        #ffffff 10px,
+        #eeeeee 10px,
+        #eeeeee 20px
+      );  
 
 }
 
-.category .active .card{
-    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.3);
-    background: #c3e6ea;
+.category .card.active {
+    border:1px solid #28a745;  
+    color: #28a745; 
+    border-bottom:4px solid #28a745;
 }
+
 .category .card{
-    background:#CBEFF4; 
+    background:ffffff; 
     text-decoration: none;
-    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.3);
+    border:1px solid gray;  
+    border-bottom:4px solid gray;
+    height: 80px;
+    margin-bottom: 30px;
 }
 .card{
-    background:#feffd0; 
     height: 120px;
     cursor: pointer;
     color:darkblue;
+    border:none;
+    border:1px solid #28a745;   
+    border-bottom:4px solid #28a745; 
+    border-radius: 0; 
 }
 
-.tile{
-    padding: 0 15px 15px 0;
+.card,.tile a:hover{
+    text-decoration: none;
+}
+
+.card:active{
+    background-color:#28a745; 
+    color:white;
+    border-color: white;
+}
+
+
+.card:active .item-price{
+    background:white;
+    color:#28a745; 
 }
 
 .statement li{
@@ -66,5 +96,31 @@ body{
     position: absolute;
     bottom: 0;
     right: 0;
-    border-radius: 4px 0px;
+    padding:8px;
+    border-radius: 8px 0 0 0;
+}
+
+.member.frozen{
+    opacity:0.5;
+    background: repeating-linear-gradient(
+        45deg,
+        #ffffff,
+        #ffffff 10px,
+        #dddddd 10px,
+        #dddddd 20px
+      );    
+}
+
+.scanner{
+    padding:20px;
+    background:#eee;
+    margin-top:40px;
+}
+
+.balance .positive{
+
+}
+
+.balance .negative{
+    color:red;
 }

@@ -15,8 +15,8 @@ class Item extends React.Component {
 
   render() {
     return (
-      <div className="col-md-3 tile" onClick={this.handleClick}>
-        <div className="card">
+      <div className="col-md-3" >
+        <div className="tile card" onClick={this.handleClick}>
           <div className="card-body">
             <h4 className="card-title">{this.props.title}</h4>
             <span className="badge badge-success item-price">

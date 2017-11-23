@@ -8,7 +8,7 @@ class ItemList extends React.Component {
   render() {
     return (
       <div>
-        <Info>Categories:{this.props.category}</Info>
+        <Info>Categories:</Info>
         <div className="row category">
           <Tile
             active={

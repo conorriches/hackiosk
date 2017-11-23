@@ -16,7 +16,7 @@ const Header = () => {
           
           {menuItems.map((item, i) => {
             return (
-              <li className="nav-item active" key={i}>
+              <li className="nav-item" key={i}>
                 <Link className="nav-link" to={item.url}>
                   {item.name} 
                 </Link>

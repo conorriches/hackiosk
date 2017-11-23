@@ -1,26 +1,52 @@
 import React from "react";
 import { connect } from "react-redux";
 import StatementItem from "./StatementItem";
-import { addItem } from "../actions";
+import { clearBasket, startCheckout } from "../actions";
 
 class Statement extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClearClick = this.handleClearClick.bind(this);
+    this.startCheckout = this.startCheckout.bind(this);
+  }
+
+  handleClearClick(e) {
+    this.props.clearBasket();
+  }
+
+  startCheckout(e) {
+    this.props.startCheckout();
+  }
+
   render() {
     return (
       <div className="statement">
         <div className="info">Your Basket:</div>
         {this.props.items.map((item, i) => (
-          <StatementItem name={item.name} price={item.price} barcode={item.barcode} key={i} />
+          <StatementItem
+            name={item.name}
+            price={item.price}
+            barcode={item.barcode}
+            key={i}
+          />
         ))}
         <hr />
         <StatementItem name="Total" price={sum(this.props.items)} />
-        
-          <button type="button" className="btn btn-danger">
-            Clear
-          </button>
-          <button type="button" className="btn btn-success pull-right">
-            Buy
-          </button>
-      
+
+        <button
+          type="button"
+          onClick={this.startCheckout}
+          className="btn btn-success btn-block pull-right"
+        >
+          Buy
+        </button>
+        <button
+          type="button"
+          onClick={this.handleClearClick}
+          className="btn btn-outline-danger btn-block"
+        >
+          Clear
+        </button>
       </div>
     );
   }
@@ -35,16 +61,15 @@ const sum = items => {
 };
 
 // Maps state from store to props
-const mapStateToProps = (state, ownProps) => ({
-  // You can now say this.props.books
-  items: state.statement
-});
+const mapStateToProps = (state, ownProps) => {
+  return {items: state.statement, snackspace: state.snackspace}
+};
 
 // Maps actions to props
 const mapDispatchToProps = dispatch => {
   return {
-    // You can now say this.props.createBook
-    createBook: item => dispatch(addItem(item))
+    clearBasket: () => dispatch(clearBasket()),
+    startCheckout: () => dispatch(startCheckout())
   };
 };
 

@@ -17,7 +17,8 @@ const statement = (state = [], action) => {
       });
       
       return toReturn?[...state, toReturn] : state;
-
+    case "SNACKSPACE_STATEMENT_CLEAR":
+      return [];
     default:
       return state;
   }
