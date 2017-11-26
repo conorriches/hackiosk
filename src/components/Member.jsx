@@ -1,45 +1,33 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+
 import NumericLabel from "react-pretty-numbers";
 import classnames from "classnames";
 
 class Member extends React.Component {
   render() {
     return (
-      <div className="col-md-3">
-        <div
+      <div className="card-body fadeIn">
+        <h4 className="card-title">{this.props.name}</h4>
+        <span
           className={classnames(
-            "member",
-            "card",
-            this.props.frozen ? "frozen" : ""
+            "badge",
+            "item-price",
+            "badge-default",
+            this.props.balance > 0 ? "badge-success" : "",
+            this.props.balance < 0 ? "badge-warning" : ""
           )}
         >
-          <Link to={"/members/member/" + this.props.id}>
-            <div className="card-body">
-              <h4 className="card-title">{this.props.name}</h4>
-              <span
-                className={classnames(
-                  "badge",
-                  "item-price",
-                  "badge-default",
-                  this.props.balance > 0 ? "badge-success" : "",
-                  this.props.balance < 0 ? "badge-warning" : ""
-                )}
-              >
-                <NumericLabel
-                  params={{
-                    currency: true,
-                    currencyIndicator: "GBP",
-                    precision: 2
-                  }}
-                >
-                  {this.props.balance}
-                </NumericLabel>
-              </span>
-            </div>
-          </Link>
-        </div>
+          <NumericLabel
+            params={{
+              currency: true,
+              currencyIndicator: "GBP",
+              precision: 2
+            }}
+          >
+            {this.props.balance}
+          </NumericLabel>
+        </span>
       </div>
     );
   }

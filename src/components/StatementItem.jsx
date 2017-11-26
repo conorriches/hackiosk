@@ -4,7 +4,7 @@ import NumericLabel from "react-pretty-numbers";
 class StatementItem extends React.Component {
   render() {
     return (
-      <li>
+      <li className="fadeIn">
         <div className="row">
           <div className="col-md-8">{this.props.name}</div>
           <div className="col-md-4">

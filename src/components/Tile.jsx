@@ -5,7 +5,7 @@ import classnames from 'classnames';
 class Tile extends React.Component {
   render() {
     return (
-    <div className={classnames("col-md-3")}>
+    <div className={classnames("fadeIn", "col-md-3")}>
       <Link to={this.props.link}>
       <div className={classnames("card", this.props.active?"active":"")}>
         <div className="card-body">

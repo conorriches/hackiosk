@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addItem } from "../actions";
+import { withRouter } from "react-router";
 
 class ScannerInput extends React.Component {
   constructor(props) {
@@ -62,4 +63,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ScannerInput);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ScannerInput));

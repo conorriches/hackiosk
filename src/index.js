@@ -11,6 +11,7 @@ import Labels from "./pages/Labels";
 import Home from "./pages/Home";
 import Members from "./pages/Members";
 import Member from "./pages/Member";
+import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
 
 //Components
@@ -28,24 +29,33 @@ ReactDOM.render(
       <div>
         <Route component={Header} />
         <Route component={Title} />
-        
-        <div className="container">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/snackspace" component={Snackspace} />
-            <Route
-              exact
-              path="/snackspace/category/:category"
-              component={Snackspace}
-            />
-            <Route exact path="/labels" component={Labels} />
-            <Route exact path="/members" component={Members} />
-            <Route exact path="/members/member/:member" component={Member} />
-            <Route component={NotFound} />
-        
-          </Switch>
+
+        <div className="container-fluid ">
+          <div className="row">
+            <div className="col-xl-1" />
+            <div className="col-xl-10">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/snackspace" component={Snackspace} />
+                <Route exact path="/snackspace/checkout" component={Checkout} />
+                <Route
+                  exact
+                  path="/snackspace/category/:category"
+                  component={Snackspace}
+                />
+                <Route exact path="/labels" component={Labels} />
+                <Route exact path="/members" component={Members} />
+                <Route
+                  exact
+                  path="/members/member/:member"
+                  component={Member}
+                />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
+            <div className="col-xl-1" />
+          </div>
         </div>
-        <Route component={ScannerInput}/>
       </div>
     </Router>
   </Provider>,

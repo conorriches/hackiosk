@@ -49,7 +49,7 @@ class Member extends React.Component {
                   </NumericLabel>
                 </h3>
 
-                {this.getMember().balance < 0 && <p class="info error">
+                {this.getMember().balance < 0 && <p className="info error">
                   <b>You have a negative balance.</b><br/> Please support your space by
                   topping up when you can.
                 </p>}

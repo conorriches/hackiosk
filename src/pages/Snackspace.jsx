@@ -1,24 +1,24 @@
 import React from "react";
+import { connect } from "react-redux";
 import ItemList from "../components/ItemList";
 import Statement from "../components/Statement";
-
-import { connect } from "react-redux";
+import Info from "../components/Info";
+import MemberList from "../components/MemberList";
 
 class Snackspace extends React.Component {
+
   render() {
     return (
-      <div>
+      <div >
         <div className="row">
+          <div className="col-md-3">
+            <Statement items={[]} />
+          </div>
           <div className="col-md-9">
-            {this.props.snackspace.checkout ? null : (
               <ItemList
                 category={this.props.category}
                 match={this.props.match}
               />
-            )}
-          </div>
-          <div className="col-md-3">
-            <Statement items={[]} />
           </div>
         </div>
       </div>
@@ -27,10 +27,9 @@ class Snackspace extends React.Component {
 
   componentDidUpdate() {
     let { redirect } = this.props.snackspace;
-    
+
     if (redirect == true) {
-      console.log("//")
-      
+      console.log("Redirect to snackspace");
     }
   }
 }
@@ -42,7 +41,9 @@ const mapStateToProps = (state, ownProps) => {
 
 // Maps actions to props
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+  
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Snackspace);

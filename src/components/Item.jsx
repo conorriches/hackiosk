@@ -15,20 +15,24 @@ class Item extends React.Component {
 
   render() {
     return (
-      <div className="col-md-3" >
+      <div className="fadeIn col-md-3">
         <div className="tile card" onClick={this.handleClick}>
           <div className="card-body">
             <h4 className="card-title">{this.props.title}</h4>
-            <span className="badge badge-success item-price">
-              <NumericLabel
-                params={{
-                  currency: true,
-                  currencyIndicator: "GBP",
-                  precision: 2
-                }}
-              >
-                {this.props.price}
-              </NumericLabel>
+            <span className="badge badge-success item-category">
+              {this.props.category}
+
+              <span className="item-price">
+                <NumericLabel
+                  params={{
+                    currency: true,
+                    currencyIndicator: "GBP",
+                    precision: 2
+                  }}
+                >
+                  {this.props.price}
+                </NumericLabel>
+              </span>
             </span>
           </div>
         </div>
@@ -47,9 +51,10 @@ const mapStateToProps = (state, ownProps) => {
 
 // Maps actions to props
 const mapDispatchToProps = dispatch => {
+
   return {
     // You can now say this.props.createBook
-    addItem: (barcode) => dispatch(addItem(barcode))
+    addItem: barcode => dispatch(addItem(barcode))
   };
 };
 

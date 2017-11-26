@@ -45,6 +45,7 @@ class ItemList extends React.Component {
                 <Item
                   title={item.name}
                   price={item.price}
+                  category={item.category}
                   barcode={item.barcode}
                   key={i}
                 />

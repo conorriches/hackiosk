@@ -6,6 +6,7 @@ const statement = (state = [], action) => {
       let barcode = action.barcode;
       let toReturn = false;
 
+      if(!barcode) return state;  
       snackspace.products.map(item => {
         if (item.barcode == barcode) {
           toReturn = {
@@ -16,7 +17,7 @@ const statement = (state = [], action) => {
         }
       });
       
-      return toReturn?[...state, toReturn] : state;
+      return toReturn?[...state, toReturn] : [...state,{name:"Unknown Item",price:0, barcode: "Manually deduct from Balance"}];
     case "SNACKSPACE_STATEMENT_CLEAR":
       return [];
     default:

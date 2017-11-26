@@ -1,5 +1,7 @@
 import React from "react";
 import { menuItems } from "../config";
+import ScannerInput from './ScannerInput';
+
 
 class Title extends React.Component {
   render() {
@@ -13,6 +15,8 @@ class Title extends React.Component {
                 : ""
           )}
         </h3>
+
+        <ScannerInput/>
       </div>
     );
   }
