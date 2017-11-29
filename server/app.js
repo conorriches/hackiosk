@@ -7,8 +7,18 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var balances = require('./routes/balances');
+var products = require('./routes/products');
 
 var app = express();
+
+var mongoose = require('mongoose').set('debug', true);;
+var mongoDB = 'mongodb://localhost:27017/hackiosk';
+mongoose.connect(mongoDB, {
+  useMongoClient: true
+});
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,8 +32,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use(function(req, res, next){
+//   req.db = db;
+//   next();
+// })
 app.use('/', index);
 app.use('/users', users);
+app.use('/balances', balances);
+app.use('/products', products);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

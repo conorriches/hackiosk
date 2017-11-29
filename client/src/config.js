@@ -21,10 +21,10 @@ const config = {
   snackspace: {
     products: [
       {
-        name: "Twix",
+        name: "Fanta",
         category: "Food",
-        price: 0.3,
-        barcode: 1123123123
+        price: 0.5,
+        barcode: 5449000011527
       },
       {
         name: "Smarties",
@@ -69,39 +69,7 @@ const config = {
         barcode: 8833383835
       }
     ]
-  },
-  members: [
-    {
-      id: 1,
-      name: "Cone",
-      balance: 4.5,
-      frozen:0
-    },
-    {
-      id: 2,
-      name: "James",
-      balance: -2.5,
-      frozen:0
-    },
-    {
-      id: 3,
-      name: "Bor",
-      balance: 4.5,
-      frozen:0
-    },
-    {
-      id: 4,
-      name: "Gren",
-      balance: 0,
-      frozen:1
-    },
-    {
-      id:  5,
-      name: "Alex",
-      balance: 0.5,
-      frozen:0
-    }
-  ]
+  }
 };
 
 module.exports = config;

@@ -15,6 +15,7 @@ class Snackspace extends React.Component {
   constructor(props) {
     super(props);
     let timer = setTimeout(() => {
+      this.props.clearBasket();
       this.props.history.push("/snackspace");
     }, 5000);
 
@@ -91,7 +92,6 @@ class Snackspace extends React.Component {
 
 // Maps state from store to props
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   return { items: state.statement, snackspace: state.snackspace };
 };
 
